@@ -4,7 +4,9 @@
     <meta charset="utf-8">
     <title>Not My Tempo</title>
     <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" href="/css/master.css">
+    <link rel="stylesheet" href="css/master.css">
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 </head>
 <body>
     <section>
@@ -14,20 +16,34 @@
             <li><a href="https://linktr.ee/notmytempocollective" target="_blank">linktree</a></li>
             <li><a href="https://open.spotify.com/user/glavjkevg99kdx01hamnrqu4w" target="_blank">spotify</a></li>
         </ul>
-        <p>We are passionate about music, <a href="#people">people</a> and their creations in anchored in a mindset that makes us dream of a future we find desirable.</p>
-        <p><i>Not My Tempo</i> was born in the south side of Lugano, Switzerland.</p>
-        <p>We are still figuring out what NMT is going to be and what it will stand for. Meanwhile, <a href="https://www.instagram.com/notmytempocollective/" target="_blank">follow</a> and listen to our curated selection of <a href="https://open.spotify.com/user/glavjkevg99kdx01hamnrqu4w" target="_blank">playlists</a>. Whenever you feel a connection <a href="mailto:notmyposta@gmail.com" target="_blank">reach out</a> and become part of what will define us.</p>
-    </section>
-    <section id="people">
-        <dl>
-            <dt><a href="https://www.instagram.com/giacomo.bastianelli/" target="_blank">Giacomo Bastianelli</a></dt>
-            <dd>Graphic Design</dd>
-        </dl>
 
-        <dl>
-            <dt><a href="https://www.instagram.com/underchangeover/" target="_blank">Under Changeover</a></dt>
-            <dd>Music</dd>
+        <p>
+            We are passionate about music, its  <a href="#people">people</a> and their creations and work along with a mindset that makes us dream about a desirable future.
+        </p>
+
+        <p>
+            Not My Tempo was born in Lugano, in the Southern part of Switzerland, a place that draws together European influences between north and south.
+        </p>
+
+        <p>
+            We are still figuring out what NMT is going to be and what it will end up standing for. While we work this out, <a href="https://www.instagram.com/notmytempocollective/" target="_blank">follow</a> us and listen to our series of playlists specifically created for NMT.
+        </p>
+
+        <p>
+            Whenever you feel a connection, do <a href="mailto:notmyposta@gmail.com" target="_blank">reach out</a> and define NMT with us.
+        </p>
+    </section>
+
+    <section id="people">
+        <a href="#people" v-if="filter" v-on:click="reset" class="reset"><b>&times;</b> {{filterValue}}</a>
+        <dl v-for="p in people" v-bind:class="{fade: p.fade}">
+            <dt><a :href="p.url" target="_blank">{{p.name}}</a></dt>
+            <dd><a href="#people" v-on:click="filterPeople({focus:p.focus})">{{p.focus}}</a>
+                <br>
+                <a href="#people" v-on:click="filterPeople('NMT')"><small v-if="p.role">+ NMT {{p.role}}</small></a>
+            </dd>
         </dl>
     </section>
+    <script src="js/main.js"></script>
 </body>
 </html>
