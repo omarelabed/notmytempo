@@ -1,0 +1,23 @@
+{
+  "name": "notmytempo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/omarelabed/notmytempo.git"
+  },
+  "author": "elabedomar@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/omarelabed/notmytempo/issues"
+  },
+  "homepage": "https://github.com/omarelabed/notmytempo#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-s3-upload": "^1.7.3"
+  }
+}

@@ -10,7 +10,7 @@ var peopleApp = new Vue({
                 name: "Giacomo Bastianelli",
                 focus: "Graphic Design",
                 url: "https://www.instagram.com/giacomo.bastianelli/",
-                role: "Creative Director"
+                role: "Creative Direction"
             }, {
                 name:"Under Changeover",
                 focus:"Music",

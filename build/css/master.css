@@ -66,6 +66,8 @@ section#suca {
 
 .fade {
     opacity: .5;
+    transform: rotate3d(0, 0, 1, 180deg);
+    transform-origin: center;
 }
 .fade:hover, .fade:active {
     opacity: 1;
