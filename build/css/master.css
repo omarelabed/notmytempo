@@ -16,15 +16,27 @@ body {
     right: 0;
     min-height: 100%;
     margin: 0;
+    font-size: 130%;
+    background: black;
+}
+@media (min-width: 768px) {
+    body {
+        font-size: 100%;
+    }
 }
 h1,ul,li {
     display:inline;
     margin:0;
     padding:0;
+    background: white;
 }
 section {
     min-height: 100%;
     padding: .5rem;
+}
+p {
+    max-width: 48rem;
+    background: white;
 }
 a:hover {
     background: black;
@@ -33,6 +45,7 @@ a:hover {
 dl {
     margin: .5rem;
     padding: .5rem;
+    background: white;
 }
 dd {
     font-size: 75%;
@@ -65,10 +78,11 @@ section#suca {
 }
 
 .fade {
-    opacity: .5;
+    opacity: .33;
     transform: rotate3d(0, 0, 1, 180deg);
     transform-origin: center;
 }
 .fade:hover, .fade:active {
     opacity: 1;
+    transform: rotate3d(0, 0, 0, 0deg);
 }

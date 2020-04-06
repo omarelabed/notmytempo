@@ -1,0 +1,16 @@
+#chat-wrapper {
+    transition:.2s;
+    transform: translateX(259px) scale(0.5);
+    opacity: .25;
+    transform-origin: left top;
+}
+
+#chat-wrapper:hover {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+    transform-origin: left;
+}
+
+.sizing-wrapper.with-chat {
+    right: 0!important;
+}

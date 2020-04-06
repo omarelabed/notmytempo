@@ -2,7 +2,7 @@ const fs = require('fs');
 const config = JSON.parse(fs.readFileSync('private/awsaccess.json'));
 const gulp = require('gulp');
 const s3 = require('gulp-s3-upload')(config);
-const { src } = require('gulp');
+const { src, watch } = require('gulp');
 
 function upload(cb) {
     src("./build/**")
@@ -15,4 +15,10 @@ function upload(cb) {
     cb();
 }
 
+
 exports.upload = upload;
+
+exports.default = function() {
+    // You can use a single task
+    watch('build/**', upload);
+};

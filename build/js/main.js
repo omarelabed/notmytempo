@@ -14,11 +14,13 @@ var peopleApp = new Vue({
             }, {
                 name:"Under Changeover",
                 focus:"Music",
-                url:"https://www.instagram.com/underchangeover/"
+                url:"https://www.instagram.com/underchangeover/",
+                role:"Family"
             }, {
                 name:"Tam Bor",
                 focus:"Music",
-                url:"https://www.instagram.com/tambor___/"
+                url:"https://www.instagram.com/tambor___/",
+                role:"Family"
             }, {
                 name:"Tatum Rush",
                 focus:"Music",
