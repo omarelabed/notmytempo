@@ -60,7 +60,6 @@ section#people {
     flex-wrap: wrap;
     align-content: flex-start;
     padding: .5rem 0;
-    /* padding-top: 3rem; */
 }
 section#people a {
     text-decoration: none;
@@ -88,11 +87,6 @@ section#people a {
     background: white;
     color: inherit;
 }
-/* .fade:hover, .fade:active {
-    opacity: 1;
-    transform: rotate3d(0, 0, 0, 0deg);
-} */
-
 
 /* error page */
 section#suca {
