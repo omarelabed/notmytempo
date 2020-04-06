@@ -19,7 +19,7 @@ body {
     font-size: 130%;
     background: black;
 }
-@media (min-width: 768px) {
+@media (min-width: 900px) {
     body {
         font-size: 100%;
     }
@@ -53,21 +53,17 @@ dd {
 img {
     max-width: 100%;
 }
+
+/* people section */
 section#people {
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
     padding: .5rem 0;
+    /* padding-top: 3rem; */
 }
-
 section#people a {
     text-decoration: none;
-}
-
-section#suca {
-    padding:0;
-    background: black;
-    text-align: center;
 }
 
 .reset {
@@ -77,12 +73,30 @@ section#suca {
     color: #FFF;
 }
 
+.fixed {
+    position: fixed;
+    top: 0;
+}
+
 .fade {
     opacity: .33;
     transform: rotate3d(0, 0, 1, 180deg);
     transform-origin: center;
+    pointer-events: none;
 }
-.fade:hover, .fade:active {
+.fade a:hover, .fade a:active {
+    background: white;
+    color: inherit;
+}
+/* .fade:hover, .fade:active {
     opacity: 1;
     transform: rotate3d(0, 0, 0, 0deg);
+} */
+
+
+/* error page */
+section#suca {
+    padding:0;
+    background: black;
+    text-align: center;
 }
