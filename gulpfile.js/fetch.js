@@ -1,8 +1,9 @@
 const request = require('request');
 const {parallel} = require('gulp');
 const fs = require('fs');
+const keys = JSON.parse(fs.readFileSync('private/keys.json'));
 
-const key = "13_5p7_r3j5Jyj_v5kWBLEGHmiyOejTvcXmtUZ_6rMb4";
+const key = keys.sheet;
 const url = "https://spreadsheets.google.com/feeds/list/"+key+"/od6/public/values?alt=json";
 const keyPrefix = 'gsx$';
 
