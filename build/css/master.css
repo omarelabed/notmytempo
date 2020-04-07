@@ -19,33 +19,62 @@ body {
     font-size: 130%;
     background: black;
 }
+header {
+    margin-bottom: 5rem;
+}
 @media (min-width: 900px) {
     body {
         font-size: 100%;
     }
 }
-h1,ul,li {
-    display:inline;
-    margin:0;
-    padding:0;
-    background: white;
+h1,h2,ul,li {
+    color: white;
+    background: black;
+}
+li {
+    display: inline;
+    margin: 0 .5rem;
+}
+.nav-links a {
+    text-decoration: none;
+}
+.nav-links a span {
+    text-decoration: underline;
+}
+.nav-links a i {
+    font-style: normal;
+    vertical-align: super;
+    line-height: 0.8rem;
+    display: inline-block;
+}
+.nav-links--down a i {
+    vertical-align: bottom;
+}
+.home-link, .next-link {
+    display: inline-block;
+    padding: .5rem;
+}
+.next-link {
+    transform: rotate3d(0, 0, 1, 180deg);
 }
 section {
     min-height: 100%;
     padding: .5rem;
 }
+.content {
+    padding: .5rem;
+}
 p {
     max-width: 48rem;
-    background: white;
+    color: white;
 }
-a:hover {
+a {
     background: black;
     color: white;
 }
-dl {
-    margin: .5rem;
-    padding: .5rem;
+a:hover {
     background: white;
+    color: black;
 }
 dd {
     font-size: 75%;
@@ -56,20 +85,28 @@ img {
 
 /* people section */
 section#people {
+}
+section#people .collection {
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
-    padding: .5rem 0;
 }
-section#people a {
-    text-decoration: none;
+dl {
+    color: white;
+    margin: .5rem;
+    padding: .5rem;
+}
+dl a {
+    display: inline-block;
+    margin: .1em;
 }
 
 .reset {
     display: inline-block;
     padding: .5rem;
-    background: #000;
-    color: #FFF;
+    background: #FFF;
+    color: #000;
+    margin-left: -.5rem;
 }
 
 .fixed {
@@ -83,6 +120,10 @@ section#people a {
     transform-origin: center;
     pointer-events: none;
 }
+.fade--text {
+    display: inline-block;
+}
+
 .fade a:hover, .fade a:active {
     background: white;
     color: inherit;
@@ -93,4 +134,9 @@ section#suca {
     padding:0;
     background: black;
     text-align: center;
+}
+
+/* fancyness */
+.anchor:hover {
+
 }

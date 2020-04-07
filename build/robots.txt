@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /tricks/
+Disallow: /data/
+Disallow: /assets/
+Disallow: /js/
+Disallow: /css/
+
+Sitemap: http://notmytempo.xyz/sitemap.xml
