@@ -30,7 +30,7 @@
         <nav>
             <ul class="nav-links nav-links--down">
                 <li><a href="#bio"><span>bio</span> <i>&darr;</i></a></li>
-                <li><a href="#people"><span>people</span> <i>&darr;</i></a></li>
+                <li><a href="#members"><span>members</span> <i>&darr;</i></a></li>
             </ul>
         </nav>
     </header>
@@ -39,7 +39,7 @@
         <div class="content">
             <h2>Bio</h2>
             <p>
-                We are passionate about music, <a href="#people">people</a> and their creations. Creators of dreams with intriguing mindsets and a vision that unites us. These are the people that we want to be close to and collaborate with.
+                We are passionate about music, people and their creations. Creators of dreams with intriguing mindsets and a vision that unites us. These are the people that we want to be close to and collaborate with.
             </p>
 
             <p>
@@ -54,32 +54,26 @@
                 Whenever you feel a connection, do <a href="mailto:notmyposta@gmail.com" target="_blank">reach out</a> and define NMT with us.
             </p>
         </div>
-        <a href="#people" class="next-link">&uarr;</a>
+        <a href="#members" class="next-link">&uarr;</a>
     </section>
 
-    <section id="people">
+    <section id="members">
         <a href="#home" class="home-link">&uarr;</a>
         <div class="content">
-            <h2>People</h2>
+            <h2>Current Members</h2>
         </div>
         <div class="reset-wrapper" v-if="filter">
-            <a href="#people" v-on:click="reset" class="reset" ref="resetPeople"><b>&times;</b> {{filterValue}}</a>
+            <a href="#members" v-on:click="reset" class="reset" ref="resetPeople"><b>&times;</b> {{filterValue}}</a>
         </div>
         <div class="collection">
             <dl v-for="p in people" v-if="p.check" v-bind:class="{fade: p.fade}">
                 <dt>
-                    <a :href="p.url" v-if="p.url && p.url.length" target="_blank">{{p.name}}</a>
+                    <a :href="p.url" v-if="p.url && p.url.length" target="_blank">{{p.name}} <i>&nearr;</i></a>
                     <span v-else>{{p.name}}</span>
                 </dt>
-                <dd><a href="#people" v-on:click="filterPeople({focus:p.focus})">{{p.focus}}</a>
-                    <br>
-                    <a href="#people" v-on:click="filterPeople('NMT')">
-                        <small v-if="p.role"><b>+ NMT</b> {{p.role}}</small>
-                    </a>
-                </dd>
             </dl>
         </div>
     </section>
-    <script src="js/main.js"></script>
+    <script src="js/main.js?x"></script>
 </body>
 </html>

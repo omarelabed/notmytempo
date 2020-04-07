@@ -1,7 +1,7 @@
 "use strict";
 
 var peopleApp = new Vue({
-    el: '#people',
+    el: '#members',
     data() {
         return {
             active: '',

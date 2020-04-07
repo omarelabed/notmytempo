@@ -54,12 +54,18 @@ li {
     display: inline-block;
     padding: .5rem;
 }
+
+.home-link:hover, .next-link:hover {
+    color: white;
+    background: none;
+}
 .next-link {
     transform: rotate3d(0, 0, 1, 180deg);
 }
 section {
     min-height: 100%;
     padding: .5rem;
+    margin-bottom: 10rem;
 }
 .content {
     padding: .5rem;
@@ -83,10 +89,10 @@ img {
     max-width: 100%;
 }
 
-/* people section */
-section#people {
+/* members section */
+section#members {
 }
-section#people .collection {
+section#members .collection {
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
@@ -124,7 +130,7 @@ dl a {
     display: inline-block;
 }
 
-.fade a:hover, .fade a:active {
+.fade a:hover {
     background: white;
     color: inherit;
 }
