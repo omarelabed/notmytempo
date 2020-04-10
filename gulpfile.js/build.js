@@ -19,7 +19,6 @@ function buildCSS(cb) {
 }
 
 function buildJS(cb) {
-    console.log('TODO: buildJS');
     src('./src/js/**/*.js')
     .pipe(minify())
     .pipe(dest('./dist/js'));

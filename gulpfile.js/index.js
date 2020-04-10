@@ -18,4 +18,4 @@ exports.upload = upload;
 exports.fetch = fetch;
 exports.build = build;
 
-exports.default = parallel(fetch, build, watchDist);
+exports.default = parallel(fetch, build, watchDist, watchSrc);
