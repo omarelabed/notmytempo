@@ -6,4 +6,4 @@ Disallow: /assets/
 Disallow: /js/
 Disallow: /css/
 
-Sitemap: http://notmytempo.xyz/sitemap.xml
+Sitemap: https://notmytempo.xyz/sitemap.xml

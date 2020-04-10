@@ -14,7 +14,7 @@ var peopleApp = new Vue({
     beforeCreate() {
         let self = this;
         axios
-        .get('http://notmytempo.xyz/data/people.json')
+        .get('https://notmytempo.xyz/data/people.json')
         .then(response => {
             self.people = response.data;
             self.allPeople = response.data;
