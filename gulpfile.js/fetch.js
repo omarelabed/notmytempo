@@ -35,7 +35,7 @@ function fetchPeople(cb) {
             data.push(p);
         }
         const jsonContent = JSON.stringify(data)
-        fs.writeFile("./build/data/people.json", jsonContent, 'utf8', function (err) {
+        fs.writeFile("./src/data/people.json", jsonContent, 'utf8', function (err) {
             if (err) {
                 console.log("An error occured while writing JSON Object to File.");
                 return console.log(err);
@@ -47,4 +47,4 @@ function fetchPeople(cb) {
     cb();
 }
 
-exports.fetch = parallel(fetchPeople);
+exports.fetch = fetchPeople;

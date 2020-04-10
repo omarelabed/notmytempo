@@ -4,7 +4,7 @@ const { src } = require('gulp');
 const s3 = require('gulp-s3-upload')(config);
 
 function upload(cb) {
-    src("./build/**")
+    src("./dist/**")
     .pipe(s3({
         Bucket: 'notmytempo.xyz',
         ACL:    'public-read'
