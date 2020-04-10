@@ -5,7 +5,7 @@
     <title>Not My Tempo Collective – Official Website</title>
     <meta name="viewport" content="width=device-width">
     <meta name="description" content="Not My Tempo (NMT) is a Collective based in Lugano, Switzerland. We are passionate about music, people and their creations.">
-    <link rel="stylesheet" href="css/master.css">
+    <link rel="stylesheet" href="css/x.css">
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-162935471-1"></script>
     <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-162935471-1');</script>
@@ -32,20 +32,21 @@
     <meta property="og:url" content="https://notmytempo.xyz/"/>
     <meta property="og:description" content=""/>
     <meta property="og:type" content="website"/>
-    <meta property="og:image" content="https://notmytempo.xyz/assets/logo.jpg"/>
+    <meta property="og:image" content="https://notmytempo.xyz/assets/logo.png"/>
 </head>
 <body>
     <header>
         <h1 id="home">Not My Tempo <span class="fade fade--text">Collective</span></h1>
         <ul class="nav-links">
-            <li><a href="https://www.instagram.com/notmytempocollective/" target="_blank" title="NMT on Instagram"><span>instagram</span> <i>&nearr;</i></a></li>
+            <li><a href="https://www.instagram.com/notmytempocollective/" target="_blank" rel="noopener" title="NMT on Instagram"><span>instagram</span> <i>&nearr;</i></a></li>
             <!-- <li><a href="https://linktr.ee/notmytempocollective" target="_blank">linktree</a></li> -->
-            <li><a href="https://open.spotify.com/user/glavjkevg99kdx01hamnrqu4w" target="_blank" title="NMT on Spotify"><span>spotify</span> <i>&nearr;</i></a></li>
+            <li><a href="https://open.spotify.com/user/glavjkevg99kdx01hamnrqu4w" target="_blank" rel="noopener" title="NMT on Spotify"><span>spotify</span> <i>&nearr;</i></a></li>
         </ul>
         <nav>
             <ul class="nav-links nav-links--down">
                 <li><a href="#bio" title="Bio"><span>bio</span> <i>&darr;</i></a></li>
                 <li><a href="#members" title="Current Members"><span>members</span> <i>&darr;</i></a></li>
+                <li><a href="#orbit" title="Go to the orbit"><span>orbit</span> <i>&darr;</i></a></li>
             </ul>
         </nav>
     </header>
@@ -60,10 +61,10 @@
                 Not My Tempo was born as a Collective in Lugano, in the Southern part of Switzerland, a place that draws together European influences between north and south.
             </p>
             <p>
-                We are still figuring out what NMT is going to be besides a collective and what it will end up standing for. While we work this out, <a href="https://www.instagram.com/notmytempocollective/" target="_blank" title="Follow us on Instagram">follow</a> us and listen to our series of playlists specifically created for NMT.
+                We are still figuring out what NMT is going to be besides a collective and what it will end up standing for. While we work this out, <a href="https://www.instagram.com/notmytempocollective/" target="_blank" rel="noopener" title="Follow us on Instagram">follow</a> us and listen to our series of playlists specifically created for NMT.
             </p>
             <p>
-                Whenever you feel a connection, do <a href="mailto:notmyposta@gmail.com" target="_blank" title="Send an Email">reach out</a> and define NMT with us.
+                Whenever you feel a connection, do <a href="mailto:notmyposta@gmail.com" target="_blank" rel="noopener" title="Send an Email">reach out</a> and define NMT with us.
             </p>
         </div>
         <a href="#members" class="next-link" title="Current Members">&uarr;</a>
@@ -77,19 +78,29 @@
         <div class="content">
             <h2>Current Members</h2>
         </div>
-        <div class="reset-wrapper" v-if="filter">
-            <a href="#members" v-on:click="reset" class="reset" ref="resetPeople" title="Reset Filter"><b>&times;</b> {{filterValue}}</a>
+        <div class="members">
+            <div v-for="member in members" v-if="member.check" v-bind:class="{fade: member.fade}" class="member">
+                <a :href="member.url" v-if="member.url && member.url.length" target="_blank" rel="noopener" title="Check out {{member.name}}">{{member.name}} <i>&nearr;</i></a>
+                <span v-else>{{member.name}}</span>
+            </div>
         </div>
-        <div class="collection">
-            <dl v-for="p in people" v-if="p.check" v-bind:class="{fade: p.fade}">
-                <dt>
-                    <a :href="p.url" v-if="p.url && p.url.length" target="_blank" title="Check out {{p.name}}">{{p.name}} <i>&nearr;</i></a>
-                    <span v-else>{{p.name}}</span>
-                </dt>
-            </dl>
-        </div>
+        <a href="#orbit" class="next-link" title="Current Members">&uarr;</a>
     </section>
     <script src="js/main-min.js"></script>
+    <section id="orbit">
+        <a href="#home" class="home-link" title="Home">&uarr;</a>
+        <div class="logo">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <div class="logo__imgs">
+                <img src="assets/logo.min.png" alt="Logo Not My Tempo Frame" class="lazy logo__img logo__img--circle rotating" data-src="assets/logo-circle.png?x"/>
+                <img src="assets/logo.min.png" alt="Logo NMT" class="lazy logo__img logo__img--nmt" data-src="assets/logo-nmt.png"/>
+            </div>
+        </div>
+    </section>
     <script type="application/ld+json">
     {
         "@context" : "https://schema.org",

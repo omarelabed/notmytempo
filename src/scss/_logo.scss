@@ -1,0 +1,120 @@
+$rotation-time: 10s;
+
+@-webkit-keyframes rotating /* Safari and Chrome */ {
+    from {
+        -webkit-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+@keyframes rotating {
+    from {
+        -ms-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    to {
+        -ms-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+.rotating {
+    -webkit-animation: rotating $rotation-time linear infinite;
+    -moz-animation: rotating $rotation-time linear infinite;
+    -ms-animation: rotating $rotation-time linear infinite;
+    -o-animation: rotating $rotation-time linear infinite;
+    animation: rotating $rotation-time linear infinite;
+}
+
+.logo {
+    position: absolute;
+    overflow: hidden;
+    max-height: 100vw;
+    max-width: 100vh;
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    &__imgs {
+        transition: 1s;
+    }
+    &__img {
+        width: 100%;
+        height: 100%;
+        filter: invert(1);
+        &--nmt {
+            transition: 3s;
+        }
+        &--circle {
+            position: absolute;
+        }
+    }
+    span {
+        position: absolute;
+        z-index: 1;
+        display: block;
+        &:nth-child(1) {
+            right: 0;
+            top: 0;
+            width: 50%;
+            height: 50%;
+            &:hover ~ .logo__imgs {
+                transform: rotate3d(1.4, 0.5, 1, 25deg);
+            }
+        }
+        &:nth-child(2) {
+            right: 0;
+            bottom: 0;
+            width: 50%;
+            height: 50%;
+            &:hover ~ .logo__imgs {
+                transform: rotate3d(1.4, 0.5, 1, -25deg);
+            }
+        }
+        &:nth-child(3) {
+            left: 0;
+            bottom: 0;
+            width: 50%;
+            height: 50%;
+            &:hover ~ .logo__imgs {
+                transform: rotate3d(1.4, 0.5, 1, 180deg);
+            }
+        }
+        &:nth-child(4) {
+            left: 0;
+            top: 0;
+            width: 50%;
+            height: 50%;
+            &:hover ~ .logo__imgs {
+                transform: rotate3d(1.4, 0.5, 1, -320deg);
+            }
+        }
+        &:nth-child(5) {
+            right: 50%;
+            bottom: 50%;
+            width: 40%;
+            height: 40%;
+            transform: translate(50%,50%);
+            border-radius: 50%;
+            &:hover ~ .logo__imgs .logo__img {
+                &--nmt {
+                    filter: invert(1);
+                    transform: rotate3d(1, 1, 0, 270deg);
+                    opacity: .33;
+                }
+                &--circle {
+                    animation-duration: .2s;
+                }
+            }
+        }
+    }
+}

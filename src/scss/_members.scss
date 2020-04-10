@@ -1,0 +1,16 @@
+.members {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    margin: 0 -0.5rem;
+}
+
+.member {
+    color: white;
+    margin: .5rem;
+    padding: .5rem;
+    &__link {
+        display: inline-block;
+        margin: .1em;
+    }
+}

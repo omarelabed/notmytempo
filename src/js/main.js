@@ -4,71 +4,47 @@ var peopleApp = new Vue({
     el: '#members',
     data() {
         return {
-            active: '',
-            people: [],
-            allPeople: [],
-            filter: null,
-            filterValue: ''
+            members: [],
         }
     },
     beforeCreate() {
         let self = this;
         axios
-        .get('https://notmytempo.xyz/data/people.json')
+        .get('/data/people.json')
         .then(response => {
-            self.people = response.data;
-            self.allPeople = response.data;
+            self.members = response.data;
         })
     },
     created(){
-        this.allPeople = this.people.slice();
+    },
+    mounted() {
+        window.scrollTo(0, 0);
+        window.addEventListener("scroll", this.lazyLoad);
     },
     methods: {
-        filterPeople: function(filter) {
-            if (this.$refs && this.$refs.resetPeople && this.$refs.resetPeople.focus) {
-                this.$refs.resetPeople.focus();
-            }
-            // this.$refs['#resetPeople'].focus();
-            this.filter = filter;
-            if (!filter) {
-                return this.people;
-            } else {
-                var peeps = [];
-                if (filter === 'NMT') {
-                    // filter NMT
-                    this.filterValue = 'NMT';
-                    for (let p of this.people) {
-                        if (p.role && p.role.length) {
-                            p.fade = false;
-                            peeps.unshift(p);
-                        } else {
-                            p.fade = true;
-                            peeps.push(p);
+        lazyLoad: function () {
+            let lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
+            let active = false;
+            let self = this;
+            if (active === false) {
+                active = true;
+                setTimeout(() => {
+                    lazyImages.forEach(function (lazyImage) {
+                        if ((lazyImage.getBoundingClientRect().top <= window.innerHeight && lazyImage.getBoundingClientRect().bottom >= 0) && getComputedStyle(lazyImage).display !== "none") {
+                            lazyImage.src = lazyImage.dataset.src;
+                            lazyImage.classList.remove("lazy");
+                            lazyImages = lazyImages.filter(function (image) {
+                                return image !== lazyImage;
+                            });
+
+                            if (lazyImages.length === 0) {
+                                window.removeEventListener("scroll", self.lazyLoad);
+                            }
                         }
-                    }
-                } else if (filter.focus) {
-                    // filter for focus
-                    this.filterValue = filter.focus;
-                    for (let p of this.people) {
-                        if (p.focus === filter.focus) {
-                            p.fade = false;
-                            peeps.unshift(p);
-                        } else {
-                            p.fade = true;
-                            peeps.push(p);
-                        }
-                    }
-                }
+                    });
+                    active = false;
+                }, 200)
             }
-            this.people = peeps;
-            return peeps;
-        },
-        reset: function() {
-            this.people = this.allPeople;
-            this.people.forEach((item, i) => {
-                item.fade = false;
-            });
-            this.filter = null;
         }
     }
 });

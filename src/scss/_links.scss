@@ -1,0 +1,27 @@
+.nav-links a {
+    text-decoration: none;
+}
+.nav-links a span {
+    text-decoration: underline;
+}
+.nav-links a i {
+    font-style: normal;
+    vertical-align: super;
+    line-height: 0.8rem;
+    display: inline-block;
+}
+.nav-links--down a i {
+    vertical-align: bottom;
+}
+.home-link, .next-link {
+    display: inline-block;
+    padding: .5rem;
+}
+
+.home-link:hover, .next-link:hover {
+    color: white;
+    background: none;
+}
+.next-link {
+    transform: rotate3d(0, 0, 1, 180deg);
+}

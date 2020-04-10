@@ -1,0 +1,19 @@
+.fixed {
+    position: fixed;
+    top: 0;
+}
+
+.fade {
+    opacity: .33;
+    transform: rotate3d(0, 0, 1, 180deg);
+    transform-origin: center;
+    pointer-events: none;
+}
+.fade--text {
+    display: inline-block;
+}
+
+.fade a:hover {
+    background: white;
+    color: inherit;
+}
