@@ -32,9 +32,15 @@ function copyData(cb) {
 }
 
 function copyAssets(cb) {
-    src('./src/assets/**')
+    src(['./src/assets/**'])
     .pipe(dest('./dist/assets'));
     cb();
+}
+
+function copyLabels(cb) {
+    src('./src/labels/**')
+    .pipe(dest('./dist/labels'))
+    cb()
 }
 
 exports.buildHTML = buildHTML;
@@ -43,4 +49,4 @@ exports.buildJS = buildJS;
 exports.copyData = copyData;
 exports.copyAssets = copyAssets;
 
-exports.build = parallel(buildCSS, buildHTML, buildJS, copyData, copyAssets);
+exports.build = parallel(buildCSS, buildHTML, buildJS, copyData, copyAssets, copyLabels);
