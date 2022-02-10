@@ -22,7 +22,7 @@
     "gulp-minify": "^3.1.0",
     "gulp-s3-upload": "^1.7.3",
     "gulp-sass": "^4.0.2",
-    "node-sass": "^4.13.1"
+    "node-sass": "^7.0.0"
   },
   "dependencies": {
     "request": "^2.88.2"
